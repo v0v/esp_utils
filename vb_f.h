@@ -4,7 +4,7 @@
     #include "time.h"
     #include <Arduino.h>
     #include <ElegantOTA.h>
-    #include "display_config.h"
+    //#include "display_config.h"
 
     extern int timeCurrentHourOfTheDay;
     
