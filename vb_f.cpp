@@ -17,12 +17,8 @@ String printLocalTime(){
   // Serial.print("timeCurrentHourOfTheDay: ");
   // Serial.println(timeCurrentHourOfTheDay);
 
-  String weekDay = weekDays[timeClient.getDay()];
-  Serial.print("Week Day: ");
-  Serial.println(weekDay); 
-
   //strftime(output, 80, "%d-%b-%y %H:%M:%S", &timeinfo);
-  strftime(output, 80, weekDay+", "+"%d-%b %H:%M:%S", &timeinfo);
+  strftime(output, 80, "%a, %d-%b %H:%M:%S", &timeinfo);
   time_str = String(output);
   return String(output);
 }
@@ -64,50 +60,3 @@ void onOTAEnd(bool success) {
   // <Add your own code here>
 }
 
-char* monthName(int monthNumber) {
-    char* monthName = "xxx";
-    switch (stamp.month) {
-      case 1:
-        strcpy(monthName, "Jan");
-        break;
-      case 2:
-        strcpy(monthName, "Feb");
-        break;
-      case 3:
-        strcpy(monthName, "Mar");
-        break;
-      case 4:
-        strcpy(monthName, "Apr");
-        break;
-      case 5:
-        strcpy(monthName, "May");
-        break;
-      case 6:
-        strcpy(monthName, "Jun");
-        break;
-      case 7:
-        strcpy(monthName, "Jul");
-        break;
-      case 8:
-        strcpy(monthName, "Aug");
-        break;
-      case 9:
-        strcpy(monthName, "Sep");
-        break;
-      case 10:
-        strcpy(monthName, "Oct");
-        break;
-      case 11:
-        strcpy(monthName, "Nov");
-        break;
-      case 12:
-        strcpy(monthName, "Dec");
-        break;
-    }
-}
-
-//Week Days
-String weekDays[7]={"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-
-//Month names
-String months[12]={"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
