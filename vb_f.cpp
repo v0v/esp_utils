@@ -18,7 +18,7 @@ String printLocalTime(){
   // Serial.println(timeCurrentHourOfTheDay);
 
   //strftime(output, 80, "%d-%b-%y %H:%M:%S", &timeinfo);
-  strftime(output, 80, "%a, %d-%b %H:%M:%S", &timeinfo);
+  strftime(output, 80, "%a %d-%b %H:%M:%S", &timeinfo);
   time_str = String(output);
   return String(output);
 }
